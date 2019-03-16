@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://liftdashboardapi.azurewebsites.net/api';
+const API_BASE_URL = process.env.REACT_APP_API;
 
 const client = axios.create({
   baseURL: API_BASE_URL,

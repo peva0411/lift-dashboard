@@ -4,7 +4,8 @@ import { connectRouter } from 'connected-react-router';
 const initialState = {
   indicators: [],
   products: [],
-  selectedIndicatorIndex: 0
+  selectedIndicatorIndex: 0,
+  badReviews: []
 };
 
  function dashboard (state = initialState, action){
@@ -13,7 +14,8 @@ const initialState = {
       return {
         ...state,
         indicators: action.payload.indicators,
-        products: action.payload.products
+        products: action.payload.products,
+        badReviews: action.payload.badReviews
       };
     }
     case 'INDICATOR_SELECTED':{

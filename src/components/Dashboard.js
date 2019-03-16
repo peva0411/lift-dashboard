@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {fetchIndicators, indicatorSelected} from '../actions';
-
+import ReviewList from "./ReviewList";
 import Topbar from './Topbar';
 import Products from './Products';
 import ProductsBelowMsrp from './ProductsBelowMsrp';
@@ -137,7 +137,7 @@ class Dashboard extends Component {
           <Grid item xs={12}>
             {this.props.selectedIndicatorIndex === 0 && <ProductsBelowMsrp products={this.props.products}></ProductsBelowMsrp>}
             {this.props.selectedIndicatorIndex === 1 && <div>3rd Party</div>}
-            {this.props.selectedIndicatorIndex === 2 && <div>Bad Reviews</div>}
+            {this.props.selectedIndicatorIndex === 2 && <ReviewList reviews={this.props.badReviews}></ReviewList>}
           </Grid>
         </Grid>
 
@@ -150,7 +150,8 @@ function mapStateToProps(state){
   return {
     indicators: state.dashboard.indicators,
     selectedIndicatorIndex: state.dashboard.selectedIndicatorIndex,
-    products:state.dashboard.products
+    products:state.dashboard.products, 
+    badReviews: state.dashboard.badReviews
   };
 }
 
