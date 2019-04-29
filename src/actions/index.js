@@ -6,7 +6,8 @@ export function fetchIndicatorsSucceeded(data){
     payload:{
       indicators: data.indicators,
       products: data.productDetails,
-      badReviews: data.badReviews
+      badReviews: data.badReviews,
+      changeEvent: data.changeEvent
     }
   }
 }

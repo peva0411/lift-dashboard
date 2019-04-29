@@ -5,7 +5,8 @@ const initialState = {
   indicators: [],
   products: [],
   selectedIndicatorIndex: 0,
-  badReviews: []
+  badReviews: [],
+  changeEvent: {}
 };
 
  function dashboard (state = initialState, action){
@@ -15,7 +16,8 @@ const initialState = {
         ...state,
         indicators: action.payload.indicators,
         products: action.payload.products,
-        badReviews: action.payload.badReviews
+        badReviews: action.payload.badReviews,
+        changeEvent: action.payload.changeEvent
       };
     }
     case 'INDICATOR_SELECTED':{
