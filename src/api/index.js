@@ -9,6 +9,19 @@ const client = axios.create({
   },
 });
 
-export function fetchIndicators(){
-  return client.get('/indicators');
+export function fetchIndicators(clientId){
+  if (clientId === null) return client.get(`/indicators`);
+  return client.get(`/indicators/${clientId}`);
+}
+
+export function fetchClients(){
+  return client.get('/clients');
+}
+
+export function fetchClient(clientId){
+  return client.get(`/clients/${clientId}`);
+}
+
+export function fetchProductDetails(productId){
+  return client.get(`/products/${productId}`);
 }

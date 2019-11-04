@@ -6,6 +6,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import TableCell from '@material-ui/core/TableCell';
+import { Link, withRouter } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -37,9 +38,12 @@ function ProductsBelowMsrp(props){
           {props.products.map(product => (
             <TableRow key={product.asin} >
               <TableCell scope="row" component="th">
-                {product.client}
+                <Link to={`clients/${product.clientId}`}>{product.client}</Link> 
               </TableCell>
-              <TableCell align="right">{product.asin}</TableCell>
+              <TableCell align="right">
+              <Link to={`products/${product.asin}`}>
+                  {product.asin}</Link>
+              </TableCell>
               <TableCell align="left">{product.name}</TableCell>
               <TableCell align="right">{product.msrp}</TableCell>
               <TableCell align="right">{product.price}</TableCell>

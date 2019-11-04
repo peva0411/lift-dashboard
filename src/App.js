@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 import {Route, Switch} from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
-import Clients from './components/Clients';
+import Client from './components/Client';
+import ClientList from './components/ClientList';
+import Product from './components/Product';
 import Layout from './components/Layout';
 import {fetchIndicators} from './actions';
 import './App.css';
@@ -40,8 +42,11 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Layout>
           <Route exact path="/" component={Dashboard}/>
-          <Route path="/products" component={Products}/>
-          <Route path="/clients" component={Clients}/>
+          <Route path="/products" component={Products} exact/>
+          <Route path="/clients" component={ClientList} exact/>
+          <Route path="/clients/:clientId" component={Client} exact/>
+          <Route path="/clients/products/:productId" component={Product}/>
+          <Route path="/products/:productId" component={Product}/>
         </Layout>
       </MuiThemeProvider>
       </div>

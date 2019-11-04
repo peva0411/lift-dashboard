@@ -28,7 +28,7 @@ const styles = theme => ({
 class ChangeEvents extends React.Component{
 
     state ={
-        value: "0"
+        value: "1"
     };
 
     handleChange = (event, value) => {
@@ -73,14 +73,14 @@ class ChangeEvents extends React.Component{
                        ))}
                    </TableBody>
                </Table>}
-               {this.state.value === '1' &&        <Table className={classes.table}>
+               {this.state.value === '1' && <Table className={classes.table}>
                   <TableHead>
                       <TableRow>
                       <TableCell align="left">Client</TableCell>
                            <TableCell align="left">Product Name</TableCell>
                           <TableCell align="left">Asin</TableCell>
-                          <TableCell align="right">Old Owner</TableCell>
-                          <TableCell align="right">New Owner</TableCell>
+                          <TableCell align="left">Old Owner</TableCell>
+                          <TableCell align="left">New Owner</TableCell>
                           <TableCell align="right">Date</TableCell>
                       </TableRow>
                   </TableHead>
@@ -92,8 +92,8 @@ class ChangeEvents extends React.Component{
                               <TableCell scope="row" component="th">
                                   {ownerEvent.asin}
                               </TableCell>
-                              <TableCell align="right">{ownerEvent.oldOwner}</TableCell>
-                              <TableCell align="right">{ownerEvent.newOwner}</TableCell>
+                              <TableCell align="left">{ownerEvent.oldOwner}</TableCell>
+                              <TableCell align="left">{ownerEvent.newOwner}</TableCell>
                               <TableCell align="right">{ownerEvent.dateChanged}</TableCell>
                           </TableRow>
                       ))}

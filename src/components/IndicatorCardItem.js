@@ -21,7 +21,7 @@ const styles = theme => ({
 class IndicatorCardItem extends Component{
 
   handleClicked = e => {
-    console.log(this.props.index);
+    //console.log(this.props.index);
     this.props.onIndicatorSelected(this.props.index);
   };
 
